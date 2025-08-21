@@ -1,0 +1,303 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+:root{
+    --yellow: #ffa500; 
+    --offwhite: #9f9f9f;
+    --transition:0.3s;
+    --second-color:#f9f9f9f9;
+}
+.navbar .container .navbar-brand {
+    color: var(--yellow); 
+    font-size: 2rem; 
+}
+.navbar-nav .nav-link {
+    color:black !important; /* Color for navigation links */ /*important is used to override any other styles */
+    font-weight:600;
+    font-size: 1.2rem; 
+    transition: var(--transition); 
+}
+.navbar-nav .nav-link:hover {
+    background-color: var(--yellow) !important;
+    color: #fff !important;
+    border-radius: 5px;
+
+}
+.btn{
+
+    color: #000; 
+    transition: var(--transition); 
+}
+
+/*end css for navbar*/
+
+.carousel-item img{
+    object-fit: cover;
+    height:100vh; /*to make the caption cover the full height of the carousel */ 
+}
+.carousel-item .carousel-caption {
+    border-radius: 10px;
+    background-color: #ffa500;
+    color: #fff; 
+    
+}
+.carousel-item .carousel-caption h5 {
+    font-size: 2rem; 
+    font-weight: 700;
+    text-transform: uppercase; 
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap:20px; 
+    flex-direction: column;
+    transition: var(--transition); 
+    align-items: center; 
+    top:40%; 
+    right:0;
+    position:fixed;
+    
+
+}
+
+.canater{
+    width: 80%; 
+    margin: 0 auto; 
+    padding: 20px; 
+     /*so we put accordion in the center of the page */
+}
+
+.destination .main-title{
+    text-align: center; 
+    margin: 20px 0; 
+    font-size: 2rem; 
+    color: var(--yellow); 
+}
+
+@media screen and (max-width: 768px) {
+    .destination .main-title {
+        font-size: 1.5rem;
+    }
+    
+}
+
+.main-content{
+    text-align: left; 
+    
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+    background-color: var(--second-color);
+    border-radius: 10px;
+    margin-bottom:10px;
+  
+
+}
+.main-content h3 {
+    font-size: 2rem;
+    color: var(--yellow); 
+    margin-bottom: 10px;
+    padding-left: 10px; 
+}
+.main-content p {
+    font-size: 1.2rem; 
+    padding: 0 10px;
+    line-height: 1.5rem;
+}
+.main-content .btn{
+    width:40%; 
+    margin:10px;
+}
+.main-content img{
+    width: 100%;
+    height: 100%; 
+    border-radius: 10px; 
+    transition: var(--transition); 
+    object-fit: cover; 
+}
+.main-content img:hover{
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+/*thanks start*/
+.wrapper {
+    position: relative; /* Position relative for overlay */     /*must be relative to position the overlay text */
+}
+
+.wrapper .overlay{
+    position: absolute; /* Position absolute for overlay text */ /*do not get out of the wrapper */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; 
+    text-align:center; 
+    opacity: 0;
+    transition: var(--transition); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    height: 0; /* Initially hidden */
+    border-radius: 10px;
+}
+
+.wrapper .overlay:hover{
+    opacity: 1; /* Show overlay text on hover */
+    background-color: var(--yellow);
+    height: 100%;
+    
+}
+/*end thanks*/
+
+/*start news*/
+.wrapper-card{
+    gap:20px;
+    background-color: var(--second-color);
+    border-radius:10px;
+}
+.text-content{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding:10px;
+}
+.main-title{
+    color:var(--yellow);
+    font-size:2rem;
+
+}
+.text-content span{
+    margin-bottom:10px;
+    font-weight:600;
+
+}
+.text-content p{
+    color:var(--offwhite)
+}
+.wrapper-card .main-image{
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.main-image .image{
+    clip-path:polygon(24% 0% , 100% 0% , 100% 100% , 5% 100%)
+    
+}
+.main-image .special{
+    clip-path:polygon(0% 0% , 65% 0% , 90% 100% , 0% 100%);
+}
+
+
+.control-box .control{
+    background-color: var(--offwhite);
+    text-align: center;
+    padding-top:5px;
+    padding-right:5px ;
+    padding-bottom:5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    
+}
+.control-box .control:hover{
+    background-color: var(--yellow);
+    color:#fff;
+}
+@media screen and (max-width: 1000px) {
+    .container{
+        align-items: center;
+    }
+    .text-content h2{
+        font-size:1.5rem;
+    }
+    .text-content span{
+        font-size:1rem;
+    }
+    .text-content p{
+        font-size:1rem;
+    }
+    .text-content .control-box{
+        display:flex;
+        flex-direction: column;
+        gap:10px;
+    }
+    .text-content .control-box .control{
+        font-size:0.8rem;
+        padding:5px;
+    }
+    .main-image .image{
+    clip-path:none !important;
+    width:100%;
+    height:100%;
+   
+}
+.main-image .special{
+    clip-path:none !important;
+     width:100%;
+    height:100%;
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+
+}
+.wrapper-card{
+    display: flex;
+    flex-direction: column;
+}
+}
+/*end news*/
+
+.media{
+    background-color: var(--second-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    box-shadow: 10px 10px 20px #babecc,-10px -10px 20px #ffffff;
+    color:black;
+    margin:1.5rem;
+
+    transition: var(--transition);
+}
+.media:hover{
+    transform:translateY(-5px);
+}
+.media .subs{
+    font-size:1.6rem;
+}
+/*end media*/
+/*start footer*/
+.footer-text{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    gap:10px;
+}
+.footer-text img{
+    width:50%;
+}
+@media screen and (max-width:768px){
+    .footer-text{
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+    }
+    .footer-text h2{
+        font-size:1.5rem;
+    }
+    .footer-text img{
+        top:100%;
+        left:100%;
+        transform:translate(50%,0%);
+    }
+}
